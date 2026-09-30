@@ -1,0 +1,86 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'>
+<rect width='100%' height='100%' fill='#FFFFFF'/>
+<text x='56' y='58' font-family='Arial, Helvetica, sans-serif' font-size='30' font-weight='700' fill='#12355B'>Correlation Structure of Development and Vulnerability Indicators</text>
+<text x='56' y='90' font-family='Arial, Helvetica, sans-serif' font-size='17' fill='#6B7280'>Pairwise correlations among core variables</text>
+<text x='70' y='243' font-family='Arial' font-size='13' fill='#1F2937'>monetary_poverty</text>
+<text x='413' y='167' transform='rotate(-45 413,167)' font-family='Arial' font-size='13' fill='#1F2937'>monetary_poverty</text>
+<rect x='405' y='185' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='435' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='500' y='185' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='530' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.79</text>
+<rect x='595' y='185' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='625' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.54</text>
+<rect x='690' y='185' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.44</text>
+<rect x='785' y='185' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='815' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.41</text>
+<rect x='880' y='185' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.02</text>
+<rect x='975' y='185' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1005' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.57</text>
+<rect x='1070' y='185' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1100' y='240' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.79</text>
+<text x='70' y='338' font-family='Arial' font-size='13' fill='#1F2937'>extreme_poverty</text>
+<text x='508' y='167' transform='rotate(-45 508,167)' font-family='Arial' font-size='13' fill='#1F2937'>extreme_poverty</text>
+<rect x='405' y='280' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='435' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.79</text>
+<rect x='500' y='280' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='530' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='595' y='280' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='625' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.54</text>
+<rect x='690' y='280' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.43</text>
+<rect x='785' y='280' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='815' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.43</text>
+<rect x='880' y='280' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.01</text>
+<rect x='975' y='280' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1005' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.60</text>
+<rect x='1070' y='280' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1100' y='335' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.73</text>
+<text x='70' y='433' font-family='Arial' font-size='13' fill='#1F2937'>labor_informality</text>
+<text x='603' y='167' transform='rotate(-45 603,167)' font-family='Arial' font-size='13' fill='#1F2937'>labor_informality</text>
+<rect x='405' y='375' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='435' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.54</text>
+<rect x='500' y='375' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='530' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.54</text>
+<rect x='595' y='375' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='625' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='690' y='375' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.14</text>
+<rect x='785' y='375' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='815' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.84</text>
+<rect x='880' y='375' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='910' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.51</text>
+<rect x='975' y='375' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='1005' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.26</text>
+<rect x='1070' y='375' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1100' y='430' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.66</text>
+<text x='70' y='528' font-family='Arial' font-size='13' fill='#1F2937'>social_protection_coverage</text>
+<text x='698' y='167' transform='rotate(-45 698,167)' font-family='Arial' font-size='13' fill='#1F2937'>social_protection_coverage</text>
+<rect x='405' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='435' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.44</text>
+<rect x='500' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='530' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.43</text>
+<rect x='595' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='625' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.14</text>
+<rect x='690' y='470' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='720' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='785' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='815' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.24</text>
+<rect x='880' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.14</text>
+<rect x='975' y='470' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='1005' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.35</text>
+<rect x='1070' y='470' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='1100' y='525' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.70</text>
+<text x='70' y='623' font-family='Arial' font-size='13' fill='#1F2937'>gdp_per_capita</text>
+<text x='793' y='167' transform='rotate(-45 793,167)' font-family='Arial' font-size='13' fill='#1F2937'>gdp_per_capita</text>
+<rect x='405' y='565' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='435' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.41</text>
+<rect x='500' y='565' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='530' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.43</text>
+<rect x='595' y='565' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='625' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.84</text>
+<rect x='690' y='565' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.24</text>
+<rect x='785' y='565' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='815' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='880' y='565' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.27</text>
+<rect x='975' y='565' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='1005' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.35</text>
+<rect x='1070' y='565' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='1100' y='620' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.62</text>
+<text x='70' y='718' font-family='Arial' font-size='13' fill='#1F2937'>unemployment</text>
+<text x='888' y='167' transform='rotate(-45 888,167)' font-family='Arial' font-size='13' fill='#1F2937'>unemployment</text>
+<rect x='405' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='435' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.02</text>
+<rect x='500' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='530' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.01</text>
+<rect x='595' y='660' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='625' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.51</text>
+<rect x='690' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.14</text>
+<rect x='785' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='815' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.27</text>
+<rect x='880' y='660' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='910' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='975' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='1005' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.21</text>
+<rect x='1070' y='660' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='1100' y='715' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.39</text>
+<text x='70' y='813' font-family='Arial' font-size='13' fill='#1F2937'>gini</text>
+<text x='983' y='167' transform='rotate(-45 983,167)' font-family='Arial' font-size='13' fill='#1F2937'>gini</text>
+<rect x='405' y='755' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='435' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.57</text>
+<rect x='500' y='755' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='530' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.60</text>
+<rect x='595' y='755' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='625' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.26</text>
+<rect x='690' y='755' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='720' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.35</text>
+<rect x='785' y='755' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='815' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.35</text>
+<rect x='880' y='755' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.21</text>
+<rect x='975' y='755' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1005' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<rect x='1070' y='755' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1100' y='810' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.75</text>
+<text x='70' y='908' font-family='Arial' font-size='13' fill='#1F2937'>structural_vulnerability_index</text>
+<text x='1078' y='167' transform='rotate(-45 1078,167)' font-family='Arial' font-size='13' fill='#1F2937'>structural_vulnerability_index</text>
+<rect x='405' y='850' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='435' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.79</text>
+<rect x='500' y='850' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='530' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.73</text>
+<rect x='595' y='850' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='625' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.66</text>
+<rect x='690' y='850' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='720' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.70</text>
+<rect x='785' y='850' width='95' height='95' fill='#8A7650' stroke='#FFFFFF'/><text x='815' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>-0.62</text>
+<rect x='880' y='850' width='95' height='95' fill='#F7F8FA' stroke='#FFFFFF'/><text x='910' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.39</text>
+<rect x='975' y='850' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1005' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>0.75</text>
+<rect x='1070' y='850' width='95' height='95' fill='#12355B' stroke='#FFFFFF'/><text x='1100' y='905' font-family='Arial' font-size='15' font-weight='700' fill='#FFFFFF'>1.00</text>
+<text x='56' y='950' font-family='Arial, Helvetica, sans-serif' font-size='13' fill='#6B7280'>Pairwise correlations computed using available observations. Source: harmonized country-year panel.</text>
+</svg>

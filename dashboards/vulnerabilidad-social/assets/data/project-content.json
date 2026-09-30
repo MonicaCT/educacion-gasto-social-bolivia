@@ -1,0 +1,55 @@
+{
+  "title": "Structural Vulnerability in Latin America and the Caribbean",
+  "subtitle": "Reproducible development analytics for comparing structural vulnerability, institutional constraints and socioeconomic risks across Latin America and the Caribbean.",
+  "status": "Published research site",
+  "repository_url": "https://github.com/MonicaCT/structural-vulnerability-lac-research",
+  "website_url": "https://monicact.github.io/structural-vulnerability-lac-research/",
+  "dashboard_url": "dashboard.html",
+  "portfolio_url": "https://monicact.github.io/",
+  "author": "Monica Cueto Tapia",
+  "primary_lab": "Applied Economics Lab",
+  "secondary_labs": [
+    "Development Analytics Lab",
+    "Research Methods Lab",
+    "Business Intelligence Lab",
+    "Open Science Lab"
+  ],
+  "coverage": {
+    "observations": "648 country-year observations",
+    "countries": "27 countries",
+    "period": "2000-2023",
+    "complete_case_observations": "178 econometric sample observations",
+    "complete_case_countries": "17 countries in the complete-case model sample"
+  },
+  "key_findings": [
+    "Labor informality, unemployment and inequality are positively associated with structural vulnerability in the existing panel outputs.",
+    "Social protection coverage and GDP per capita are negatively associated with structural vulnerability.",
+    "Fixed-effects and two-way fixed-effects specifications are preferred for interpretation because they absorb time-invariant country characteristics and common year shocks.",
+    "The evidence is descriptive and associational, not causal.",
+    "Mechanism outputs suggest that social assistance and social insurance expansions are correlated across the region, limiting channel separation in the current panel.",
+    "Country event-study outputs are exploratory and should be interpreted cautiously."
+  ],
+  "figures": [
+    "assets/figures/oecd_style/figure_01_structural_vulnerability_ranking.svg",
+    "assets/figures/oecd_style/figure_02_bolivia_profile.svg",
+    "assets/figures/oecd_style/figure_03_lac_average_trends.svg",
+    "assets/figures/oecd_style/figure_04_correlation_heatmap.svg",
+    "assets/figures/oecd_style/figure_05_scatter_informality_vulnerability.svg",
+    "assets/figures/oecd_style/figure_06_scatter_social_protection_vulnerability.svg",
+    "assets/figures/oecd_style/figure_07_model_coefficients.svg",
+    "assets/figures/oecd_style/figure_09_missingness_map.svg"
+  ],
+  "tables": [
+    "outputs/models/tables/phase3_table_1_descriptive_statistics.html",
+    "outputs/models/tables/phase3_table_2_regression_comparison.html",
+    "outputs/models/tables/phase3_table_3_robustness_dashboard.html"
+  ],
+  "methodology": [
+    "Data audit for panel dimensions, country-year coverage, missingness, variable coverage, descriptive statistics and balance.",
+    "Structural vulnerability index using poverty, informality, social protection, GDP per capita, gender labor gap and unemployment components when available.",
+    "Min-max normalization and z-score standardization.",
+    "Baseline index averages available normalized components.",
+    "Sensitivity checks compare alternative weights and leave-one-component-out rankings.",
+    "Econometric evidence is descriptive and associational, not causal."
+  ]
+}

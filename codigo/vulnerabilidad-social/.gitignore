@@ -1,0 +1,12 @@
+.Rhistory
+.RData
+.Rproj.user/
+*.tmp
+*.log
+*.bak
+*.swp
+*.aux
+*.out
+*.toc
+.DS_Store
+Thumbs.db

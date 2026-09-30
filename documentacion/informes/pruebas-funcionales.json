@@ -1,0 +1,54 @@
+[
+  {
+    "test": "Portal: búsqueda, acentos y estado vacío",
+    "status": "passed"
+  },
+  {
+    "test": "Diploma: 25 láminas, índice, navegación, gráficos y pestañas",
+    "status": "passed"
+  },
+  {
+    "test": "Diploma: nueve descargas Excel con datos",
+    "status": "passed"
+  },
+  {
+    "test": "Diploma: simulador y descarga reflejan controles",
+    "status": "passed"
+  },
+  {
+    "test": "Diploma: todas las láminas en móvil, índice y controles accesibles",
+    "status": "passed"
+  },
+  {
+    "test": "DDE: filtros, gráficos, reporte y CSV",
+    "status": "passed"
+  },
+  {
+    "test": "DDEd: seis pestañas, búsqueda, CSV y filtros",
+    "status": "passed"
+  },
+  {
+    "test": "Muestra: cinco pestañas y método disponible",
+    "status": "passed"
+  },
+  {
+    "test": "Atlas: cinco módulos, filtro y exportaciones CSV",
+    "status": "passed"
+  },
+  {
+    "test": "Mapas educativos: cambio de año y figura 2020",
+    "status": "passed"
+  },
+  {
+    "test": "Protección social: filtro de país y año actualizan gráficos",
+    "status": "passed"
+  },
+  {
+    "test": "Vulnerabilidad: figuras cargadas y sin desborde móvil",
+    "status": "passed"
+  },
+  {
+    "test": "Ejecución sin errores JavaScript",
+    "status": "passed"
+  }
+]

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Structural Vulnerability in Latin America and the Caribbean"
+type: software
+authors:
+  - given-names: "Monica"
+    family-names: "Cueto Tapia"
+repository-code: "https://github.com/MonicaCT/structural-vulnerability-lac-research"
+url: "https://github.com/MonicaCT/structural-vulnerability-lac-research"
+license: MIT
+abstract: "A reproducible applied development economics repository using a country-year panel to study poverty, informality, social protection and structural vulnerability in Latin America and the Caribbean."
+keywords:
+  - development economics
+  - poverty
+  - labor informality
+  - social protection
+  - Latin America and the Caribbean
+  - structural vulnerability
+  - panel data
+  - econometrics
+  - reproducible research
+date-released: "2026-07-07"

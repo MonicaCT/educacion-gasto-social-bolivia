@@ -1,0 +1,39 @@
+{
+  "semilla": "SEIE-2024-MUESTRA-20260917-V1",
+  "sha256_base": "adf8a81e3136adef3b4b0b73bbe9fec076b7f3876c9bc625deb050eb8cfbde80",
+  "fuente_registros": 16099,
+  "elegibles_provisionales": 15442,
+  "excluidos": 657,
+  "motivos_exclusion": {
+    "Solo inicial": 609,
+    "Matrícula total cero": 48
+  },
+  "muestra": 120,
+  "reservas": 24,
+  "codigos_distintos": 144,
+  "composicion_muestra": {
+    "nivel_evaluacion": {
+      "Primaria": 60,
+      "Secundaria": 60
+    },
+    "area": {
+      "Rural": 67,
+      "Urbana": 53
+    },
+    "dependencia": {
+      "Fiscal": 89,
+      "Privada": 31
+    },
+    "mixta_primaria_secundaria": {
+      "No": 67,
+      "Sí": 53
+    }
+  },
+  "principales_local_compartido": 27,
+  "locales_repetidos_entre_listas": {
+    "71180016": 2,
+    "81230101": 2
+  },
+  "distritos_faltantes_principales": 0,
+  "asignaciones_tratamiento": 0
+}

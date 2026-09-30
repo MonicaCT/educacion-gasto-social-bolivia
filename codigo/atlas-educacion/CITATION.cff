@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Atlas Bolivia · CPV 2024: población, territorio y educación"
+message: "Si utiliza este dashboard, cite este repositorio y las fuentes estadísticas/cartográficas correspondientes."
+type: software
+authors:
+  - family-names: "Cueto Tapia"
+    given-names: "Mónica"
+repository-code: "https://github.com/MonicaCT/atlas-bolivia-cpv2024"
+url: "https://monicact.github.io/atlas-bolivia-cpv2024/"
+version: "1.0.0"
+date-released: "2026-09-25"
+license: MIT
+keywords:
+  - Bolivia
+  - CPV 2024
+  - censo
+  - demografía
+  - educación
+  - análisis territorial
+  - visualización de datos

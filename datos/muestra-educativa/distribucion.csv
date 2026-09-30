@@ -1,0 +1,19 @@
+﻿nivel,codigo_departamento,departamento,marco,muestra,reservas
+Primaria,1,CHUQUISACA,964,6,1
+Primaria,2,LA PAZ,3184,10,2
+Primaria,3,COCHABAMBA,1721,8,2
+Primaria,4,ORURO,504,4,1
+Primaria,5,POTOSI,1713,8,1
+Primaria,6,TARIJA,635,6,1
+Primaria,7,SANTA CRUZ,2047,8,2
+Primaria,8,BENI,612,6,1
+Primaria,9,PANDO,257,4,1
+Secundaria,1,CHUQUISACA,212,6,1
+Secundaria,2,LA PAZ,1026,10,2
+Secundaria,3,COCHABAMBA,599,8,2
+Secundaria,4,ORURO,191,6,1
+Secundaria,5,POTOSI,415,6,1
+Secundaria,6,TARIJA,162,4,1
+Secundaria,7,SANTA CRUZ,841,10,2
+Secundaria,8,BENI,259,6,1
+Secundaria,9,PANDO,100,4,1

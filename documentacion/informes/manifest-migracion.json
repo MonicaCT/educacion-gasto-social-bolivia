@@ -1,0 +1,98 @@
+[
+  {
+    "producto": "gasto-dde-2016-2025",
+    "repositorio": "MonicaCT/dashboard-gasto-dde-2016-2025",
+    "commit": "5abdbc983d949ca32962a60e54870471a62ef35d",
+    "archivos": 1,
+    "origen": "index.html",
+    "destino": "dashboards/gasto-dde-2016-2025/index.html",
+    "sha256": "bac25b1488e9b87b24b6b5a9c31e761853611c3339dfe049f8d311f7d37694a1",
+    "sha256_publicado": "c35209349e0c556d514c6715f63ab8bdb275054bec61e69c8eaf61318048a02b",
+    "adaptaciones": [
+      "Plotly 2.35.2 servido desde assets/js/vendor; misma versión."
+    ]
+  },
+  {
+    "producto": "gasto-dded-bolivia",
+    "repositorio": "MonicaCT/dashboard-gasto-dded-bolivia",
+    "commit": "824051457788b7f41ba7aa82966bc65116764b05",
+    "archivos": 2,
+    "origen": "index.html",
+    "destino": "dashboards/gasto-dded-bolivia/index.html",
+    "sha256": "76f8c4a2dc3fb66a57fdd359cae04ffe6c4896d8bad1d9291ec65417b132f5f0",
+    "sha256_publicado": "76f8c4a2dc3fb66a57fdd359cae04ffe6c4896d8bad1d9291ec65417b132f5f0",
+    "adaptaciones": []
+  },
+  {
+    "producto": "muestra-educativa-bolivia",
+    "repositorio": "MonicaCT/muestra-educativa-bolivia-dashboard",
+    "commit": "45040090742a9271d2514cf96bad99121eff575a",
+    "archivos": 2,
+    "origen": "index.html",
+    "destino": "dashboards/muestra-educativa-bolivia/index.html",
+    "sha256": "91695b78333552120d27fcb22dfc43572a0ebaa5ff42130ee773bb113951968a",
+    "sha256_publicado": "e32551659eed15dc3bb71e4b27a97ede95400e6eb9a17feb0bc326a8c5645b86",
+    "adaptaciones": [
+      "Eliminado identificador de hilo local y texto literal de saltos de línea fuera del contenido.",
+      "Recuperado paquete de reproducción, XLSX y PPTX desde las descargas integradas."
+    ]
+  },
+  {
+    "producto": "atlas-educacion-bolivia",
+    "repositorio": "MonicaCT/atlas-bolivia-cpv2024",
+    "commit": "2d35c66c8fcf5da4fe9e8d71b2e82aa5c95e43fd",
+    "archivos": 10,
+    "origen": "index.html",
+    "destino": "dashboards/atlas-educacion-bolivia/index.html",
+    "sha256": "e32cbc1d07f2cdb16309c3ee35f3442f6095b00da39a58ac1cc8638320138c6a",
+    "sha256_publicado": "e32cbc1d07f2cdb16309c3ee35f3442f6095b00da39a58ac1cc8638320138c6a",
+    "adaptaciones": []
+  },
+  {
+    "producto": "gasto-educativo-regional",
+    "repositorio": "MonicaCT/SpatialEconometrics_education",
+    "commit": "9383f1af7a1655da8ed41504ab0113ef8fa1c05b",
+    "archivos": 36,
+    "origen": "index.html",
+    "destino": "dashboards/gasto-educativo-regional/index.html",
+    "sha256": null,
+    "sha256_publicado": "e69653f519f821aafe5190a338c989b7c7611e9d2f661ec2a4b0c0d95a265d56",
+    "adaptaciones": []
+  },
+  {
+    "producto": "diploma-bachiller-digital",
+    "origen": "HTML final adjunto por la autora",
+    "sha256": "8d98a3028ec04173a263b9c645612e82dc871ed3b82d51366910210c7207aa26",
+    "destino": "presentaciones/diploma-bachiller-digital/index.html",
+    "sha256_publicado": "2880c121108cf58d6d53ef4867a597feef4cbe6160550a4f5a071050c1d092ae",
+    "adaptaciones": [
+      "Controlador Excel expuesto para los botones HTML.",
+      "Referencias largas con ajuste de línea en móvil.",
+      "Original adjunto conservado íntegramente en codigo/diploma-bachiller/."
+    ]
+  },
+  {
+    "producto": "proteccion-social",
+    "repositorio": "MonicaCT/poverty-informality-social-protection-lac",
+    "commit": "38a996e678b132e8529017b2cb75db45ed430eb4",
+    "archivos": 197,
+    "origen": "docs/dashboard/index.html",
+    "destino": "dashboards/proteccion-social/dashboard/index.html",
+    "sha256": "209c793a9c45adc15565f6d0842b0cdc1d1a4110b66e1521e602ab35a3ec76c0",
+    "sha256_publicado": "209c793a9c45adc15565f6d0842b0cdc1d1a4110b66e1521e602ab35a3ec76c0",
+    "adaptaciones": []
+  },
+  {
+    "producto": "vulnerabilidad-social",
+    "repositorio": "MonicaCT/structural-vulnerability-lac-research",
+    "commit": "daa24b9693f205aeaafbcc520b2ac3132639380b",
+    "archivos": 190,
+    "origen": "docs/dashboard.html",
+    "destino": "dashboards/vulnerabilidad-social/dashboard.html",
+    "sha256": "3c9683230c36b59d2002f06d3244499d755b53b505624c6d50d8d752af60e1c2",
+    "sha256_publicado": "3c9683230c36b59d2002f06d3244499d755b53b505624c6d50d8d752af60e1c2",
+    "adaptaciones": [
+      "CSS de figuras y tablas ajustado para evitar desbordamiento."
+    ]
+  }
+]
