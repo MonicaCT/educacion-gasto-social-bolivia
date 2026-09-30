@@ -31,7 +31,7 @@
     "origen": "index.html",
     "destino": "dashboards/muestra-educativa-bolivia/index.html",
     "sha256": "91695b78333552120d27fcb22dfc43572a0ebaa5ff42130ee773bb113951968a",
-    "sha256_publicado": "e32551659eed15dc3bb71e4b27a97ede95400e6eb9a17feb0bc326a8c5645b86",
+    "sha256_publicado": "c63466264e44a76bec7854ac6dfff94cea42369575b428e0e56ae03dd4f72ded",
     "adaptaciones": [
       "Eliminado identificador de hilo local y texto literal de saltos de línea fuera del contenido.",
       "Recuperado paquete de reproducción, XLSX y PPTX desde las descargas integradas."
