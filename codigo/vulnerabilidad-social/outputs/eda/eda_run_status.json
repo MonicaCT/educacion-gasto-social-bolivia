@@ -1,8 +1,0 @@
-{
-    "status":  "completed",
-    "report":  "DATA_EXPLORATION_REPORT.md",
-    "eda_outputs":  "outputs/eda",
-    "rows":  648,
-    "countries":  27,
-    "years":  24
-}

@@ -10,16 +10,6 @@
     "final": "https://biblioteca.minedu.gob.bo/biblio/eBooks/2019/October/5d93d53d8779a/1_LEY_No._070.pdf"
   },
   {
-    "url": "https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css",
-    "status": 200,
-    "final": "https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css"
-  },
-  {
-    "url": "https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js",
-    "status": 200,
-    "final": "https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"
-  },
-  {
     "url": "https://cdn.plot.ly/plotly-2.35.2.min.js",
     "status": 200,
     "final": "https://cdn.plot.ly/plotly-2.35.2.min.js"
@@ -95,36 +85,6 @@
     "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac"
   },
   {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/CITATION.cff",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/CITATION.cff"
-  },
-  {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/data/metadata/CODEBOOK.md",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/data/metadata/CODEBOOK.md"
-  },
-  {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_1_descriptive_statistics.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_1_descriptive_statistics.html"
-  },
-  {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_3_country_ranking.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_3_country_ranking.html"
-  },
-  {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_4_regional_summary.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_4_regional_summary.html"
-  },
-  {
-    "url": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_5_missing_values.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/poverty-informality-social-protection-lac/blob/main/outputs/tables/table_5_missing_values.html"
-  },
-  {
     "url": "https://github.com/MonicaCT/rural-bolivia-housing-analytics",
     "status": 200,
     "final": "https://github.com/MonicaCT/rural-bolivia-housing-analytics"
@@ -135,44 +95,9 @@
     "final": "https://github.com/MonicaCT/structural-vulnerability-lac-research"
   },
   {
-    "url": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/CITATION.cff",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/CITATION.cff"
-  },
-  {
-    "url": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_1_descriptive_statistics.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_1_descriptive_statistics.html"
-  },
-  {
-    "url": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_2_regression_comparison.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_2_regression_comparison.html"
-  },
-  {
-    "url": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_3_robustness_dashboard.html",
-    "status": 200,
-    "final": "https://github.com/MonicaCT/structural-vulnerability-lac-research/blob/main/outputs/models/tables/phase3_table_3_robustness_dashboard.html"
-  },
-  {
     "url": "https://github.com/lab-tecnosocial/municipios-bolivia-2024",
     "status": 200,
     "final": "https://github.com/lab-tecnosocial/municipios-bolivia-2024"
-  },
-  {
-    "url": "https://monicact.github.io/MonicaCT/",
-    "status": 200,
-    "final": "https://monicact.github.io/MonicaCT/"
-  },
-  {
-    "url": "https://monicact.github.io/poverty-informality-social-protection-lac/",
-    "status": 200,
-    "final": "https://monicact.github.io/poverty-informality-social-protection-lac/"
-  },
-  {
-    "url": "https://monicact.github.io/structural-vulnerability-lac-research/",
-    "status": 200,
-    "final": "https://monicact.github.io/structural-vulnerability-lac-research/"
   },
   {
     "url": "https://www.economiayfinanzas.gob.bo/sites/default/files/2021-12/Directrices%20de%20Formulaci%C3%B3n%20Presupuestaria%20_%202020.pdf",

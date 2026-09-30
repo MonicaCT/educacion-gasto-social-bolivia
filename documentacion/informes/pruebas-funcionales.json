@@ -40,14 +40,6 @@
     "status": "passed"
   },
   {
-    "test": "Protección social: filtro de país y año actualizan gráficos",
-    "status": "passed"
-  },
-  {
-    "test": "Vulnerabilidad: figuras cargadas y sin desborde móvil",
-    "status": "passed"
-  },
-  {
     "test": "Ejecución sin errores JavaScript",
     "status": "passed"
   }

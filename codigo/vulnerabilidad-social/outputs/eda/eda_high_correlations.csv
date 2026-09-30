@@ -1,8 +1,0 @@
-﻿"variable_1","variable_2","correlation","abs_correlation"
-"monetary_poverty","extreme_poverty","0.793","0.793"
-"monetary_poverty","structural_vulnerability_index","0.791","0.791"
-"extreme_poverty","structural_vulnerability_index","0.735","0.735"
-"labor_informality","gdp_per_capita","-0.844","0.844"
-"labor_informality","male_labor_participation","0.767","0.767"
-"gdp_per_capita","male_labor_participation","-0.769","0.769"
-"gini","structural_vulnerability_index","0.749","0.749"

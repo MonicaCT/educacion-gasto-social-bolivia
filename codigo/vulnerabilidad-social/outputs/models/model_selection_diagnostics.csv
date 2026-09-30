@@ -1,7 +1,0 @@
-﻿"dependent","regressors","observations","countries","years"
-"structural_vulnerability_index","gdp_per_capita + unemployment","521","27","24"
-"structural_vulnerability_index","labor_informality + gdp_per_capita + unemployment","297","24","24"
-"structural_vulnerability_index","labor_informality + social_protection_coverage + gdp_per_capita + unemployment","180","18","18"
-"structural_vulnerability_index","labor_informality + social_protection_coverage + gdp_per_capita + unemployment + gini","178","17","18"
-"structural_vulnerability_index","labor_informality + social_protection_coverage + gdp_per_capita + female_labor_participation + unemployment","65","11","7"
-"structural_vulnerability_index","labor_informality + social_protection_coverage + gdp_per_capita + unemployment + social_expenditure","71","7","15"

@@ -72,27 +72,11 @@
     ]
   },
   {
-    "producto": "proteccion-social",
-    "repositorio": "MonicaCT/poverty-informality-social-protection-lac",
-    "commit": "38a996e678b132e8529017b2cb75db45ed430eb4",
-    "archivos": 197,
-    "origen": "docs/dashboard/index.html",
-    "destino": "dashboards/proteccion-social/dashboard/index.html",
-    "sha256": "209c793a9c45adc15565f6d0842b0cdc1d1a4110b66e1521e602ab35a3ec76c0",
-    "sha256_publicado": "209c793a9c45adc15565f6d0842b0cdc1d1a4110b66e1521e602ab35a3ec76c0",
+    "producto": "gasto-educativo-por-estudiante",
+    "origen": "HTML final adjunto por la autora",
+    "destino": "dashboards/gasto-educativo-por-estudiante/index.html",
+    "sha256": "6cc8dc09fd8f9e3111ebf05a9cb3f41b732521476d3e3ecefebce4b0480e16d9",
+    "sha256_publicado": "6cc8dc09fd8f9e3111ebf05a9cb3f41b732521476d3e3ecefebce4b0480e16d9",
     "adaptaciones": []
-  },
-  {
-    "producto": "vulnerabilidad-social",
-    "repositorio": "MonicaCT/structural-vulnerability-lac-research",
-    "commit": "daa24b9693f205aeaafbcc520b2ac3132639380b",
-    "archivos": 190,
-    "origen": "docs/dashboard.html",
-    "destino": "dashboards/vulnerabilidad-social/dashboard.html",
-    "sha256": "3c9683230c36b59d2002f06d3244499d755b53b505624c6d50d8d752af60e1c2",
-    "sha256_publicado": "3c9683230c36b59d2002f06d3244499d755b53b505624c6d50d8d752af60e1c2",
-    "adaptaciones": [
-      "CSS de figuras y tablas ajustado para evitar desbordamiento."
-    ]
   }
 ]

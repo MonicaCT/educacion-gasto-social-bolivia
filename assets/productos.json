@@ -1,5 +1,18 @@
 [
   {
+    "id": "gasto-educativo-por-estudiante",
+    "repo": null,
+    "area": "presupuesto",
+    "title": "Gasto educativo por estudiante en Bolivia",
+    "desc": "Recursos y esfuerzo educativo de Bolivia frente al mundo, América Latina y países comparables. Resultados preliminares.",
+    "period": "Evolución 2006–2024 · comparación 2020–2024",
+    "source": "UNESCO UIS y Banco Mundial · elaboración propia",
+    "kind": "Dashboard",
+    "data": "gasto-educativo-por-estudiante",
+    "code": "gasto-educativo-por-estudiante",
+    "url": "dashboards/gasto-educativo-por-estudiante/index.html"
+  },
+  {
     "id": "gasto-dde-2016-2025",
     "repo": "dashboard-gasto-dde-2016-2025",
     "area": "presupuesto",
@@ -76,31 +89,5 @@
     "data": "diploma-bachiller",
     "code": "diploma-bachiller",
     "url": "presentaciones/diploma-bachiller-digital/index.html"
-  },
-  {
-    "id": "proteccion-social",
-    "repo": "poverty-informality-social-protection-lac",
-    "area": "social",
-    "title": "Pobreza, informalidad y protección social",
-    "desc": "Panel regional y perfil de Bolivia para explorar pobreza y cobertura de protección social. Incluye indicadores de gasto social.",
-    "period": "Ventana analítica 2000–2023",
-    "source": "SEDLAC, ILOSTAT, WDI y ASPIRE, según proyecto",
-    "kind": "Dashboard",
-    "data": "proteccion-social",
-    "code": "proteccion-social",
-    "url": "dashboards/proteccion-social/dashboard/index.html"
-  },
-  {
-    "id": "vulnerabilidad-social",
-    "repo": "structural-vulnerability-lac-research",
-    "area": "social",
-    "title": "Vulnerabilidad estructural y política social",
-    "desc": "Investigación regional con perfil de Bolivia, gasto social y modelos de panel. Los resultados son asociativos, no causales.",
-    "period": "2000–2023",
-    "source": "Panel armonizado y fuentes del estudio",
-    "kind": "Análisis",
-    "data": "vulnerabilidad-social",
-    "code": "vulnerabilidad-social",
-    "url": "dashboards/vulnerabilidad-social/dashboard.html"
   }
 ]

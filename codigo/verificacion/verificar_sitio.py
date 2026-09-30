@@ -24,7 +24,7 @@ for p in ROOT.rglob('*'):
     if p.suffix.lower() in ('.html','.js','.json','.md','.py','.r','.ps1','.yml','.csv','.txt','.do'):
         if pattern.search(p.read_text(encoding='utf-8-sig',errors='replace')):errors.append(f'{p.relative_to(ROOT)}: local path or credential pattern; inspect privately')
 products=json.loads((ROOT/'assets/productos.json').read_text(encoding='utf8'))
-assert len(products)==8
+assert len(products)==7
 for p in products:
     for dest in [p['url'],f'datos/{p["data"]}/index.html',f'codigo/{p["code"]}/index-fuentes.html',f'documentacion/metodologia/{p["id"]}.html']:
         if not (ROOT/dest).is_file():errors.append('Missing product resource: '+dest)

@@ -1,9 +1,0 @@
-﻿{
-    "status":  "completed",
-    "dependent_variable":  "structural_vulnerability_index",
-    "observations":  178,
-    "countries":  17,
-    "years":  18,
-    "models":  "pooled OLS; country fixed effects; two-way fixed effects",
-    "inference":  "country-clustered standard errors"
-}

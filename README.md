@@ -12,20 +12,19 @@ Los dashboards y presentaciones se abren directamente en el navegador, en comput
 
 ## Objetivo y temas
 
-Repositorio central y portafolio público de trabajos sobre educación y gasto social en Bolivia: presupuesto y financiamiento educativo, DDE y nivel distrital, evaluación y muestreo, gestión territorial, transformación digital y protección social. Los análisis latinoamericanos se incorporan por su contenido educativo o social y su inclusión de Bolivia, con alcance regional explícito.
+Repositorio central y portafolio público de trabajos sobre educación y gasto social en Bolivia: presupuesto y financiamiento educativo, DDE y nivel distrital, evaluación y muestreo, gestión territorial, transformación digital y gasto por estudiante. Los análisis latinoamericanos se incorporan por su contenido educativo y su inclusión de Bolivia, con alcance regional explícito.
 
 ## Productos disponibles
 
 | Producto | Tipo | Período | Recursos |
 |---|---|---|---|
+| [Gasto educativo por estudiante en Bolivia](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/gasto-educativo-por-estudiante/index.html) | Dashboard interactivo | Evolución 2006–2024 · comparación 2020–2024 | [Datos](datos/gasto-educativo-por-estudiante/) · [Código](codigo/gasto-educativo-por-estudiante/) · [Método](documentacion/metodologia/gasto-educativo-por-estudiante.html) |
 | [Gasto de las DDE 2016–2025](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/gasto-dde-2016-2025/index.html) | Dashboard | 2016–2025 | [Datos](datos/gasto-dde/) · [Código](codigo/gasto-dde/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/gasto-dde-2016-2025.html) |
 | [Gasto asociado al nivel distrital](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/gasto-dded-bolivia/index.html) | Dashboard | 2016–2025 | [Datos](datos/gasto-dded/) · [Código](codigo/gasto-dded/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/gasto-dded-bolivia.html) |
 | [Propuesta de muestra nacional para evaluaciones educativas](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/muestra-educativa-bolivia/index.html) | Dashboard | Marco educativo 2024 | [Datos](datos/muestra-educativa/) · [Código](codigo/muestra-educativa/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/muestra-educativa-bolivia.html) |
 | [Atlas Bolivia · población, territorio y educación](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/atlas-educacion-bolivia/index.html) | Dashboard | CPV 2024 | [Datos](datos/atlas-educacion/) · [Código](codigo/atlas-educacion/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/atlas-educacion-bolivia.html) |
 | [Gasto educativo en el contexto regional](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/gasto-educativo-regional/index.html) | Análisis | 1990–2020 | [Datos](datos/gasto-educativo-regional/) · [Código](codigo/gasto-educativo-regional/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/gasto-educativo-regional.html) |
 | [Diploma de Bachiller Digital](https://monicact.github.io/educacion-gasto-social-bolivia/presentaciones/diploma-bachiller-digital/index.html) | Presentación | Histórico 2011–2025 · proyección 2026–2030 | [Datos](datos/diploma-bachiller/) · [Código](codigo/diploma-bachiller/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/diploma-bachiller-digital.html) |
-| [Pobreza, informalidad y protección social](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/proteccion-social/dashboard/index.html) | Dashboard | Ventana analítica 2000–2023 | [Datos](datos/proteccion-social/) · [Código](codigo/proteccion-social/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/proteccion-social.html) |
-| [Vulnerabilidad estructural y política social](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/vulnerabilidad-social/dashboard.html) | Análisis | 2000–2023 | [Datos](datos/vulnerabilidad-social/) · [Código](codigo/vulnerabilidad-social/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/vulnerabilidad-social.html) |
 
 ## Estructura
 
@@ -46,10 +45,11 @@ Los proyectos complejos se conservan completos dentro de `codigo/` para mantener
 
 ## Fuentes de datos
 
+- UNESCO UIS y Banco Mundial: gasto educativo por estudiante y comparaciones internacionales, según el HTML aportado.
+
 - MEFP: Presupuesto Abierto, recursos y gastos 2016–2025.
 - Ministerio de Educación: SEIE 2024, documentación institucional y fuentes citadas en el Diploma de Bachiller.
 - INE: Censo de Población y Vivienda 2024; cartografía de Lab TecnoSocial y referencias conservadas en cada producto.
-- Estudios regionales: paneles y diccionarios de SEDLAC, ILOSTAT, WDI, ASPIRE y otras fuentes declaradas por los proyectos. La base del estudio espacial no presenta una atribución institucional completa.
 
 Consulte [fuentes](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/fuentes/index.html) y las notas de cada producto. Los períodos no se homogeneizan artificialmente. La fecha del portal **no implica actualización de las bases**.
 
@@ -74,3 +74,7 @@ Consulte [LICENSE](LICENSE): se conservan las licencias existentes por proyecto 
 [Repositorios revisados y decisiones](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/informes/inventario.html) · [Metodología general](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/index.html)
 
 [Control de calidad y verificaciones](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/informes/control-calidad.html)
+
+## Actualización del catálogo
+
+Se retiraron los productos «Pobreza, informalidad y protección social» y «Vulnerabilidad estructural y política social», incluidos sus archivos asociados en este repositorio, por indicación de la autora. Sus repositorios originales permanecen intactos. Se añadió el dashboard de gasto educativo por estudiante. El catálogo actual contiene **7 productos**. Las versiones previas permanecen en el historial de Git.
