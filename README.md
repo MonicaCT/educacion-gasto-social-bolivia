@@ -75,6 +75,3 @@ Consulte [LICENSE](LICENSE): se conservan las licencias existentes por proyecto 
 
 [Control de calidad y verificaciones](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/informes/control-calidad.html)
 
-## Actualización del catálogo
-
-Se retiraron los productos «Pobreza, informalidad y protección social» y «Vulnerabilidad estructural y política social», incluidos sus archivos asociados en este repositorio, por indicación de la autora. Sus repositorios originales permanecen intactos. Se añadió el dashboard de gasto educativo por estudiante. El catálogo actual contiene **7 productos**. Las versiones previas permanecen en el historial de Git.
