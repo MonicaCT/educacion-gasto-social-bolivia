@@ -2,7 +2,7 @@
 
 **Dashboards, análisis y visualizaciones para el análisis de políticas públicas**
 
-Autora: **Mónica Cueto Tapia** · Actualización del repositorio: **30 de septiembre de 2026**
+Autora: **Mónica Cueto Tapia** · Actualización del repositorio: **6 de octubre de 2026**
 
 ## Abrir el portafolio
 
@@ -25,6 +25,9 @@ Repositorio central y portafolio público de trabajos sobre educación y gasto s
 | [Atlas Bolivia · población, territorio y educación](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/atlas-educacion-bolivia/index.html) | Dashboard | CPV 2024 | [Datos](datos/atlas-educacion/) · [Código](codigo/atlas-educacion/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/atlas-educacion-bolivia.html) |
 | [Gasto educativo en el contexto regional](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/gasto-educativo-regional/index.html) | Análisis | 1990–2020 | [Datos](datos/gasto-educativo-regional/) · [Código](codigo/gasto-educativo-regional/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/gasto-educativo-regional.html) |
 | [Diploma de Bachiller Digital](https://monicact.github.io/educacion-gasto-social-bolivia/presentaciones/diploma-bachiller-digital/index.html) | Presentación | Histórico 2011–2025 · proyección 2026–2030 | [Datos](datos/diploma-bachiller/) · [Código](codigo/diploma-bachiller/) · [Método](https://monicact.github.io/educacion-gasto-social-bolivia/documentacion/metodologia/diploma-bachiller-digital.html) |
+
+| [Bolivia · Costo estimado por estudiante vs presupuesto devengado](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/costo-estudiante-vs-devengado/index.html) | Dashboard interactivo | Según el producto | [Datos](datos/costo-estudiante-vs-devengado/) · [Código](codigo/costo-estudiante-vs-devengado/) · [Método](documentacion/metodologia/costo-estudiante-vs-devengado.html) |
+| [Diploma de Bachiller Digital: impacto en las DDE](https://monicact.github.io/educacion-gasto-social-bolivia/dashboards/diploma-bachiller-digital-impacto-dde/index.html) | Dashboard interactivo | Según el producto | [Datos](datos/diploma-bachiller-digital-impacto-dde/) · [Código](codigo/diploma-bachiller-digital-impacto-dde/) · [Método](documentacion/metodologia/diploma-bachiller-digital-impacto-dde.html) |
 
 ## Estructura
 

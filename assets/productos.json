@@ -89,5 +89,31 @@
     "data": "diploma-bachiller",
     "code": "diploma-bachiller",
     "url": "presentaciones/diploma-bachiller-digital/index.html"
+  },
+  {
+    "id": "costo-estudiante-vs-devengado",
+    "repo": null,
+    "area": "presupuesto",
+    "title": "Bolivia · Costo estimado por estudiante vs presupuesto devengado",
+    "desc": "Comparación territorial del costo estimado total y el presupuesto devengado comparable de las DDE. Incluye filtros, mapas, fuentes y advertencias sobre la asignación proporcional.",
+    "period": "Períodos y escenarios detallados en el dashboard",
+    "source": "Fuentes y notas incluidas en el HTML aportado",
+    "kind": "Dashboard interactivo",
+    "data": "costo-estudiante-vs-devengado",
+    "code": "costo-estudiante-vs-devengado",
+    "url": "dashboards/costo-estudiante-vs-devengado/index.html"
+  },
+  {
+    "id": "diploma-bachiller-digital-impacto-dde",
+    "repo": null,
+    "area": "digital",
+    "title": "Diploma de Bachiller Digital: impacto en las DDE",
+    "desc": "Análisis interactivo de los efectos del Diploma de Bachiller Digital en las DDE, con costos, financiamiento y escenarios.",
+    "period": "Períodos y escenarios detallados en el dashboard",
+    "source": "Fuentes y notas incluidas en el HTML aportado",
+    "kind": "Dashboard interactivo",
+    "data": "diploma-bachiller-digital-impacto-dde",
+    "code": "diploma-bachiller-digital-impacto-dde",
+    "url": "dashboards/diploma-bachiller-digital-impacto-dde/index.html"
   }
 ]
