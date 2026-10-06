@@ -1,18 +1,5 @@
 [
   {
-    "id": "gasto-educativo-por-estudiante",
-    "repo": null,
-    "area": "presupuesto",
-    "title": "Gasto educativo por estudiante en Bolivia",
-    "desc": "Recursos y esfuerzo educativo de Bolivia frente al mundo, América Latina y países comparables. Resultados preliminares.",
-    "period": "Evolución 2006–2024 · comparación 2020–2024",
-    "source": "UNESCO UIS y Banco Mundial · elaboración propia",
-    "kind": "Dashboard",
-    "data": "gasto-educativo-por-estudiante",
-    "code": "gasto-educativo-por-estudiante",
-    "url": "dashboards/gasto-educativo-por-estudiante/index.html"
-  },
-  {
     "id": "gasto-dde-2016-2025",
     "repo": "dashboard-gasto-dde-2016-2025",
     "area": "presupuesto",
@@ -76,19 +63,6 @@
     "data": "gasto-educativo-regional",
     "code": "gasto-educativo-regional",
     "url": "dashboards/gasto-educativo-regional/index.html"
-  },
-  {
-    "id": "diploma-bachiller-digital",
-    "repo": null,
-    "area": "digital",
-    "title": "Diploma de Bachiller Digital",
-    "desc": "Funciones de las DDE, modelos físico y digital, costos, financiamiento, ahorro fiscal, ingresos propios e IDH.",
-    "period": "Histórico 2011–2025 · proyección 2026–2030",
-    "source": "Ministerio de Educación; MEFP; normativa citada",
-    "kind": "Presentación",
-    "data": "diploma-bachiller",
-    "code": "diploma-bachiller",
-    "url": "presentaciones/diploma-bachiller-digital/index.html"
   },
   {
     "id": "costo-estudiante-vs-devengado",

@@ -69,7 +69,9 @@
       "Controlador Excel expuesto para los botones HTML.",
       "Referencias largas con ajuste de línea en móvil.",
       "Original adjunto conservado íntegramente en codigo/diploma-bachiller/."
-    ]
+    ],
+    "estado": "retirado",
+    "fecha_retiro": "2026-10-06"
   },
   {
     "producto": "gasto-educativo-por-estudiante",
@@ -77,6 +79,8 @@
     "destino": "dashboards/gasto-educativo-por-estudiante/index.html",
     "sha256": "6cc8dc09fd8f9e3111ebf05a9cb3f41b732521476d3e3ecefebce4b0480e16d9",
     "sha256_publicado": "6cc8dc09fd8f9e3111ebf05a9cb3f41b732521476d3e3ecefebce4b0480e16d9",
-    "adaptaciones": []
+    "adaptaciones": [],
+    "estado": "retirado",
+    "fecha_retiro": "2026-10-06"
   }
 ]
