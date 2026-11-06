@@ -85,3 +85,13 @@ dialog .hitos input[type=checkbox]{width:20px;height:20px;accent-color:#286c55}
 .toolbar .ui-icon{width:17px;height:17px}
 @media(max-width:800px){.chart-grid{grid-template-columns:1fr}.charts-heading{display:block}.charts-heading p{margin-top:5px}.chart-card{padding:17px}.chart-row{grid-template-columns:minmax(100px,1.1fr) minmax(65px,1.6fr) 60px}.tablewrap{max-height:65vh}.grid .panel{padding:13px}.metric{font-size:25px}}
 @media print{.chart-grid{display:grid;grid-template-columns:1fr 1fr}.chart-card{break-inside:avoid}.tablewrap td,.tablewrap th{font-size:10px}.table-legend{display:none}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* Paleta de la vista anterior del perfil MINISTRO, con infografías integradas. */
+body[data-role=ministro]{--accent:#246445;--soft:#edf6ef}
+body[data-role=ministro] #stats .panel:nth-child(1){background:#edf5ff;border-top:4px solid #396da7}
+body[data-role=ministro] #stats .panel:nth-child(2){background:#fff5df;border-top:4px solid #aa720d}
+body[data-role=ministro] #stats .panel:nth-child(3){background:#eaf6ef;border-top:4px solid #28805c}
+body[data-role=ministro] #stats .panel:nth-child(4){background:#f1edfa;border-top:4px solid #7657a1}
+body[data-role=ministro] .executive-info:nth-child(1){background:#edf5ff;border-top:4px solid #396da7}
+body[data-role=ministro] .executive-info:nth-child(2){background:#eaf6ef;border-top:4px solid #28805c}
+body[data-role=ministro] .executive-info:nth-child(3){background:#f1edfa;border-top:4px solid #7657a1}
