@@ -1,4 +1,22 @@
 :root{--ink:#183342;--border:#d7e3eb;--blue:#245a87;--green:#196346;--amber:#85510b;--rose:#9c3049}
+.executive-focus{margin:24px 0 16px}
+.executive-focus h2{font-size:19px;margin:0 0 5px;color:#254958}
+.executive-focus p{font-size:13px;color:#526b7a;margin:0 0 13px}
+.executive-focus-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.executive-focus-buttons button{font-size:12px;border:1px solid #cfdae2}
+.executive-focus-buttons button[aria-pressed=true]{background:#245f79;color:#fff;border-color:#245f79}
+.executive-infographics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 26px}
+.executive-info{display:flex;align-items:center;gap:14px;padding:20px 16px;margin:0;background:white;border:1px solid #d7e3eb;border-radius:12px;min-width:0}
+.executive-info h3{font-size:15px;color:#294b5b;margin:0 0 5px}
+.executive-info p{font-size:13px;color:#435e6e;margin:0 0 5px}
+.executive-info small{font-size:11px;color:#5c7381;line-height:1.5;display:block}
+.executive-ring{width:96px;flex:0 0 96px;height:96px}
+.executive-ring text{font:600 22px system-ui;fill:#254958}
+.executive-ring-value{transition:stroke-dasharray .35s ease}
+.executive-number{width:96px;flex:0 0 96px;text-align:center;font-size:37px;font-weight:650;color:#48637f}
+.executive-number small{font-size:12px;font-weight:400}
+@media(max-width:1050px){.executive-infographics{grid-template-columns:1fr}.executive-info{padding:15px 20px}.executive-ring{width:82px;height:82px;flex-basis:82px}}
+@media(prefers-reduced-motion:reduce){.executive-ring-value{transition:none}}
 .workflow-guide{margin:18px 0;background:#fff;border:1px solid #cbdce6;border-left:4px solid var(--accent);border-radius:10px;padding:15px 18px}
 .workflow-guide summary{font-size:15px;line-height:1.5}
 .workflow-figure{margin:16px 0 10px}

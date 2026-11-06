@@ -3,7 +3,7 @@
 const guides={
  responsable:{name:'Responsable',alt:'Buscar y abrir el tema; actualizar avance, situación e hitos; enviar al comité. Si convalida, el avance queda visible para el ministro. Si solicita ajustes, corregir y volver a enviar.'},
  comite:{name:'Comité de seguimiento',alt:'Filtrar temas En revisión; abrir la ficha y asumir la revisión; revisar situación, riesgos e hitos. Si la información es conforme, validar y publicar para el ministro. Si requiere ajustes, registrar observaciones y plazo; el responsable corrige y vuelve a enviar.'},
- ministro:{name:'Ministro',alt:'Consultar temas convalidados; filtrar y revisar gráficos y tabla; abrir ficha e hitos. Si lo considera necesario, registrar una orientación en el historial. Puede imprimir los temas seleccionados.'}
+ ministro:{name:'Señor Ministro',alt:'Consultar temas convalidados; filtrar y revisar gráficos y tabla; abrir ficha e hitos. Si lo considera necesario, registrar una orientación en el historial. Puede imprimir los temas seleccionados.'}
 };
 window.workflowMarkup=function(profile){
  const g=guides[profile];if(!g)return '';

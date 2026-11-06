@@ -36,10 +36,12 @@ Los cambios se guardan en este navegador. Los perfiles comparten los registros �
 
 Los registros e historiales existentes se mantienen. La aplicación sigue permitiendo guardar borradores, enviar temas al comité, convalidar avances y registrar orientaciones dentro del almacenamiento local.
 
-## Informe para el señor Ministro
+## Vista del Señor Ministro
 
-La vista del ministro se dirige formalmente a Ricardo Erick Sanjinés Chávez, Ministro de Educación, con el tratamiento Señor Ministro. Su nombre y cargo se contrastaron con la [publicación oficial de posesión](https://www.minedu.gob.bo/index.php?Itemid=854&catid=182&id=8379&option=com_content&view=article). La fecha del encabezado es la fecha de consulta, no una fecha de actualización de los datos.
+Se recuperó la presentación anterior con las tablas, los indicadores y los gráficos de seguimiento. El tratamiento es únicamente Señor Ministro, sin nombre personal.
 
-El informe utiliza una paleta de grises, blanco y un acento discreto. Resume tres indicadores globales: temas en seguimiento, temas con versión convalidada y avance global convalidado. Este último mantiene como denominador todos los temas, incluidos aquellos sin convalidación, que aportan 0 %.
+Las infografías dinámicas muestran el avance promedio de los temas seleccionados, el cumplimiento de los hitos definidos de sus versiones convalidadas y la cantidad de temas con el campo de riesgos completado. Completar ese campo no implica por sí solo un riesgo activo. Sin hitos definidos se muestra un guion, no un porcentaje de cumplimiento.
 
-La selección muestra una distribución por intervalos de avance y una tabla resumida con responsable, fecha comprometida, avance y situación convalidados. Ver ficha permite consultar el detalle y registrar orientaciones. Imprimir genera el informe personalizado con los datos de la selección y sus versiones convalidadas. Los otros perfiles conservan sus vistas de trabajo.
+Los botones de exploración filtran por intervalo de avance o por registro de riesgos. Se combinan con el buscador y los filtros existentes; Limpiar filtros restablece también esta selección. Los gráficos, infografías y tabla usan el mismo conjunto de temas y exclusivamente sus versiones convalidadas.
+
+Los indicadores globales superiores mantienen su alcance sobre todos los temas. Las infografías se refieren únicamente a la selección actual. La función de impresión y las orientaciones se conservan.
