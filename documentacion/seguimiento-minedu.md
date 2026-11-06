@@ -24,10 +24,14 @@ Los indicadores superiores resumen todos los temas; los gráficos y la tabla des
 - Comité: revise las fichas, asuma revisiones, comunique observaciones y plazos, y convalide los avances para el ministro.
 - Ministro: consulte los avances convalidados y registre orientaciones.
 
+## Diagramas por perfil
+
+Al ingresar se muestra el apartado Procedimiento e instrucciones con el diagrama correspondiente a Responsable, Comité de seguimiento o Ministro. Despliegue el apartado para ver la imagen. El botón Instrucciones de uso también incluye el mismo diagrama junto con los pasos escritos.
+
+Use Abrir diagrama en tamaño completo para leer o descargar la imagen con más detalle.
+
 ## Guardado
 
-Los cambios se conservan en el navegador. La administración puede sincronizarlos con el repositorio público desde Administración · sincronizar avances con GitHub, mediante un token personal limitado a este repositorio con permiso Contents: lectura y escritura. El token permanece únicamente en memoria durante la sesión.
+Los cambios se guardan en este navegador. Los perfiles comparten los registros únicamente en este mismo navegador: no hay sincronización entre computadoras ni navegadores diferentes. El panel de conexión, los campos de token y las opciones de sincronización fueron retirados.
 
-Guardar avances en GitHub confirma un commit. Si otra persona modificó el estado compartido, el guardado se rechaza para evitar sobrescribirla. Exporte un respaldo antes de cargar otra versión si necesita conservar cambios locales.
-
-La carga de archivos y el servicio de recepción fueron retirados. Los datos de seguimiento e historiales existentes se mantienen.
+Los registros e historiales existentes se mantienen. La aplicación sigue permitiendo guardar borradores, enviar temas al comité, convalidar avances y registrar orientaciones dentro del almacenamiento local.

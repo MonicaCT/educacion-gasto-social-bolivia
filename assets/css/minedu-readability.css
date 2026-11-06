@@ -1,4 +1,11 @@
 :root{--ink:#183342;--border:#d7e3eb;--blue:#245a87;--green:#196346;--amber:#85510b;--rose:#9c3049}
+.workflow-guide{margin:18px 0;background:#fff;border:1px solid #cbdce6;border-left:4px solid var(--accent);border-radius:10px;padding:15px 18px}
+.workflow-guide summary{font-size:15px;line-height:1.5}
+.workflow-figure{margin:16px 0 10px}
+.workflow-figure img{display:block;width:100%;height:auto;border:1px solid #dce6ee;border-radius:9px;background:#f6f9fc}
+.workflow-figure figcaption{font-size:13px;margin-top:8px}
+.workflow-figure a{color:#205c82;text-decoration:underline}
+.workflow-storage{color:#4b6374;font-size:13px;margin:12px 0 0}
 body{color:var(--ink);line-height:1.5}
 button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #145b91;outline-offset:3px}
 .ui-icon{width:19px;height:19px;vertical-align:-4px;flex-shrink:0;display:inline-block;margin-right:7px}
