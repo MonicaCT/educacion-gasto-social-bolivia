@@ -36,12 +36,38 @@ Los cambios se guardan en este navegador. Los perfiles comparten los registros �
 
 Los registros e historiales existentes se mantienen. La aplicación sigue permitiendo guardar borradores, enviar temas al comité, convalidar avances y registrar orientaciones dentro del almacenamiento local.
 
-## Vista del Señor Ministro
+## Tablero del Señor Ministro: tres vistas
 
-Se recuperó la presentación anterior con las tablas, los indicadores y los gráficos de seguimiento. El tratamiento es únicamente Señor Ministro, sin nombre personal.
+**Resumen:** matriz Importante vs. Urgente, semáforo original, cruce de marcas políticas con semáforo y alertas de seguimiento. Cada tema de la selección aparece una sola vez en la matriz. Pulse un tema para abrir su ficha y una categoría del semáforo para filtrar.
 
-Las infografías dinámicas muestran el avance promedio de los temas seleccionados, el cumplimiento de los hitos definidos de sus versiones convalidadas y la cantidad de temas con el campo de riesgos completado. Completar ese campo no implica por sí solo un riesgo activo. Sin hitos definidos se muestra un guion, no un porcentaje de cumplimiento.
+**Por unidad:** cantidad de temas y composición del semáforo por unidad, y carga por persona. Las asignaciones compartidas con / se cuentan en cada unidad o persona: estos totales no son aditivos. Pulse una unidad o persona para explorar sus temas. La etiqueta superior permite retirar la selección del gráfico.
 
-Los botones de exploración filtran por intervalo de avance o por registro de riesgos. Se combinan con el buscador y los filtros existentes; Limpiar filtros restablece también esta selección. Los gráficos, infografías y tabla usan el mismo conjunto de temas y exclusivamente sus versiones convalidadas.
+**Detalle por tema:** ficha con producto, responsable, fecha final, situación, observación original y último hito definido. Incluye proporción de hitos, cronograma parcial, seguimiento y orientaciones del Señor Ministro. Imprimir genera las fichas de la selección, o la ficha actual si está en Detalle por tema.
 
-Los indicadores globales superiores mantienen su alcance sobre todos los temas. Las infografías se refieren únicamente a la selección actual. La función de impresión y las orientaciones se conservan.
+### Alcance y fuentes
+
+El tablero incluye los 25 temas de la base original, incluso sin versión convalidada. La situación original se identifica como tal; los avances de gestión proceden únicamente de la versión convalidada. Nunca se muestra un borrador de gestión. Los indicadores superiores se refieren a la selección actual en las tres vistas.
+
+El número mostrado es A, no el identificador interno del navegador. En la base actual falta el 21; no se crea un tema ficticio ni se renumeran los siguientes. Los 16 temas sin W permanecen Sin evaluar.
+
+### Regla de prioridad
+
+Importancia = 1 punto por anunciado (D) y 1 por potencial conflicto (E); importante si suma al menos 1.
+
+Urgencia = 1 punto por entrega 2026 (F), 2 si hay una fecha final (G) o hito con año explícito vencido o en los próximos 30 días, más 2 si W es rojo o 1 si es ámbar. Urgente si suma al menos 2. Es una regla de priorización, no una recalificación del semáforo ni una medida de cumplimiento. Las fechas con año supuesto no suman puntos ni generan alertas.
+
+### Fechas y avance por hitos
+
+En la base hay 2 temas con hitos descritos. Las fechas finales G son fechas completas; los hitos escritos como 9 de noviembre no especifican año. Por defecto no se posicionan esos hitos como fechas completas. La opción Usar 2026 permite ubicarlos solo cuando F indica entrega en 2026; se señalan con asterisco y marcador discontinuo.
+
+La línea de tiempo marca la fecha de consulta en America/La_Paz. Se representan fechas objetivo y no se inventan duraciones para un Gantt. Los hitos sin fecha permanecen en la tabla de seguimiento.
+
+La proporción U de 0.25 equivale al 25 %, y si hay 4 hitos definidos, a 1/4 aritméticamente. No identifica qué hito está cumplido; no se marca uno por inferencia. Si existen confirmaciones en los hitos de una versión convalidada, se utilizan esas confirmaciones. Sin U ni confirmación se muestra Sin información, no 0 %.
+
+### Alertas y calidad
+
+Alertas de seguimiento reúne hasta 5 temas rojos de W, con hitos de fecha completa vencida sin confirmación, o con retraso positivo consignado en V. Un hito de cumplimiento desconocido se etiqueta sin confirmación, no incumplido. W carece de fecha de evaluación: el tablero no presenta esos rojos como eventos nuevos de la semana.
+
+U, V y W conservan sus significados separados. En la base U tiene 2 valores (0 y 0.25) y V tiene 2 valores (ambos 0); esa cobertura no permite sustituir W por una evaluación automática.
+
+La base está incorporada al dashboard. No hay una conexión automática con un archivo Excel externo ni se reintroduce carga de adjuntos. Actualizar la base requiere actualizar los datos incorporados; los cambios de gestión siguen guardándose en el navegador como antes.

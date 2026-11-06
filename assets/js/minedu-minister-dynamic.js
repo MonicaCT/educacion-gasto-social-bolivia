@@ -1,30 +1,111 @@
 'use strict';
 (()=>{
-let focus='all';
-const options=[['all','Todos'],['low','Avance menor a 50 %'],['middle','Avance de 50 a 79 %'],['high','Avance de 80 a 99 %'],['done','Avance de 100 %'],['risk','Con registro de riesgos']];
-const accepted=t=>{const d=t.publicado,n=Number(d?.avance||0);return focus==='all'||focus==='low'&&n<50||focus==='middle'&&n>=50&&n<80||focus==='high'&&n>=80&&n<100||focus==='done'&&n===100||focus==='risk'&&!!String(d?.riesgo||'').trim();};
-const originalVisible=window.visible;
-window.visible=function(){const rows=originalVisible();return role==='ministro'?rows.filter(accepted):rows;};
-window.ministerFocus=function(value){if(role!=='ministro'||!options.some(([key])=>key===value))return;focus=value;render();};
-const originalReset=window.resetFilters;window.resetFilters=function(){if(role==='ministro')focus='all';originalReset();};
-function ring(value,label,color){
- const ratio=value===null?0:Math.max(0,Math.min(100,value));
- return '<svg class="executive-ring" viewBox="0 0 120 120" role="img" aria-label="'+esc(label)+'"><circle cx="60" cy="60" r="49" fill="none" stroke="#e6edf1" stroke-width="9"/><circle class="executive-ring-value" cx="60" cy="60" r="49" fill="none" stroke="'+color+'" stroke-width="9" pathLength="100" stroke-dasharray="'+ratio+' 100" transform="rotate(-90 60 60)"/><text x="60" y="66" text-anchor="middle">'+(value===null?'—':Math.round(value)+'%')+'</text></svg>';
+const source=RAW.slice(4).filter(r=>r.B),sourceById=new Map(initial.map((t,i)=>[Number(t.id),source[i]||{}]));
+const colors={'1':'#348166','2':'#bd8a25','3':'#b54860','none':'#8595a1'};
+const labels={'1':'Verde','2':'Ámbar','3':'Rojo','none':'Sin evaluar'};
+const DAY=86400000,months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+let view='summary',chosen=0,assumeYear=false,unitFocus='',personFocus='',signalFocus='';
+const originalRender=window.render,originalPrint=window.printReport,originalReset=window.resetFilters;
+const scopeNote=document.querySelector('#app > .note'),originalScopeNote=scopeNote?.textContent||'';
+const split=s=>[...new Set(String(s||'').split('/').map(x=>x.trim()).filter(Boolean))];
+function today(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/La_Paz',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
+function epoch(s){return Date.parse(s+'T00:00:00Z');}
+function dateText(s){return s?new Intl.DateTimeFormat('es-BO',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(epoch(s))):'Sin fecha';}
+function iso(y,m,d){const s=[y,String(m).padStart(2,'0'),String(d).padStart(2,'0')].join('-');return !Number.isNaN(epoch(s))&&new Date(epoch(s)).toISOString().slice(0,10)===s?s:null;}
+function parseDate(value,infer=false){
+ const text=String(value||'').trim().toLowerCase();let m=text.match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/);if(m)return {date:iso(+m[1],+m[2],+m[3]),inferred:false};
+ m=text.match(/\b(\d{1,2})[/.\-](\d{1,2})[/.\-](20\d{2})\b/);if(m)return {date:iso(+m[3],+m[2],+m[1]),inferred:false};
+ m=text.match(/\b(\d{1,2})\s+(?:de\s+)?(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)(?:\s+(?:de\s+)?(20\d{2}))?/);
+ if(m&&(m[3]||infer))return {date:iso(+(m[3]||2026),months.indexOf(m[2])+1,+m[1]),inferred:!m[3]};
+ return {date:null,inferred:false};
 }
-function infographics(rows){
- const n=rows.length,avg=n?rows.reduce((sum,t)=>sum+Number(t.publicado.avance||0),0)/n:null;
- const milestones=rows.flatMap(t=>Array.isArray(t.publicado.hitos)?t.publicado.hitos:[]).filter(h=>String(h.nombre||'').trim());
- const done=milestones.filter(h=>h.hecho===true).length,total=milestones.length;
- const risks=rows.filter(t=>String(t.publicado.riesgo||'').trim()).length;
- return '<section class="executive-infographics" aria-label="Infografías de avances convalidados"><article class="executive-info">'+ring(avg,'Avance promedio convalidado de la selección','#2e718d')+'<div><h3>Avance de la selección</h3><p>'+n+' temas convalidados</p><small>Promedio con igual peso por tema.</small></div></article><article class="executive-info">'+ring(total?done/total*100:null,'Porcentaje de hitos confirmados de la selección','#32826b')+'<div><h3>Hitos confirmados</h3><p>'+done+' de '+total+' hitos definidos</p><small>'+(total?'Solo se utilizan las versiones convalidadas.':'Sin hitos definidos en esta selección.')+'</small></div></article><article class="executive-info"><div class="executive-number">'+risks+'<small>de '+n+'</small></div><div><h3>Registro de riesgos</h3><p>Temas con el campo completado</p><small>No implica que exista un riesgo activo.</small></div></article></section>';
+function finalDate(r){if(!r.G)return null;const n=Number(r.G);if(Number.isFinite(n)&&n>20000&&n<100000)return new Date(Date.UTC(1899,11,30)+n*DAY).toISOString().slice(0,10);return parseDate(r.G).date;}
+function model(t){
+ const r=sourceById.get(Number(t.id))||{},d=t.publicado||null,w=['1','2','3'].includes(String(r.W))?String(r.W):'none';
+ const hs=['L','M','N','O'].map((key,i)=>{const h=d?.hitos?.[i],name=String(h?.nombre||r[key]||'').trim();const parsed=parseDate(h?.fecha||name,assumeYear&&r.F==='1');return {index:i+1,name,status:h?.situacion||r[['P','Q','R','S'][i]]||'',done:h?typeof h.hecho==='boolean'?h.hecho:null:null,date:parsed.date,inferred:parsed.inferred};});
+ const number=String(r.A||'s/n'),unit=r.J||t.unidad||'Sin unidad',person=r.K||t.responsable||'Sin responsable';
+ const importance=(r.D==='1'?1:0)+(r.E==='1'?1:0),end=finalDate(r);
+ const dates=[end,...hs.filter(h=>!h.inferred&&h.done!==true).map(h=>h.date)].filter(Boolean);
+ const near=dates.some(date=>(epoch(date)-epoch(today()))/DAY<=30);
+ const urgency=(r.F==='1'?1:0)+(near?2:0)+(w==='3'?2:w==='2'?1:0);
+ const quad=(importance>=1?'i':'n')+(urgency>=2?'u':'n');
+ return {t,r,d,w,hs,number,unit,person,importance,urgency,quad,end,tema:t.tema||r.B,producto:t.producto||r.C};
 }
-const originalRender=window.render;
+function allModels(){return data.map(model);}
+function selection(){
+ const q=String($('search').value||'').toLowerCase(),u=$('unit').value,p=$('person').value,a=$('alertFilter').value;
+ return allModels().filter(m=>(!u||m.unit===u)&&(!p||m.person===p)&&(!a||m.w===(a==='none'?'none':a))&&(!unitFocus||split(m.unit).includes(unitFocus))&&(!personFocus||split(m.person).includes(personFocus))&&(!signalFocus||m.w===signalFocus)&&(m.tema+' '+m.producto+' '+m.unit+' '+m.person+' '+(m.d?.texto||'')+' '+(m.d?.riesgo||'')+' '+(m.r.I||'')+' '+(m.r.T||'')).toLowerCase().includes(q));
+}
+function badge(m){return '<span class="minister-signal" data-signal="'+m.w+'">'+labels[m.w]+'</span>';}
+function topic(m){return '<button class="minister-topic" onclick="ministerTopic('+Number(m.t.id)+')">'+esc(m.number)+' · '+esc(m.tema)+'</button>';}
+function card(title,body,note=''){return '<section class="minister-card"><h3>'+title+'</h3>'+body+(note?'<p class="minister-chart-note">'+note+'</p>':'')+'</section>';}
+function signals(rows){return ['1','2','3','none'].map(k=>({key:k,n:rows.filter(m=>m.w===k).length}));}
+function donut(rows){
+ const groups=signals(rows);let offset=0;const circles=groups.map(g=>{const length=rows.length?g.n/rows.length*100:0;const text='<circle cx="70" cy="70" r="52" fill="none" stroke="'+colors[g.key]+'" stroke-width="17" pathLength="100" stroke-dasharray="'+length+' '+(100-length)+'" stroke-dashoffset="'+(-offset)+'" transform="rotate(-90 70 70)"/>';offset+=length;return text;}).join('');
+ return '<div class="minister-donut-layout"><svg viewBox="0 0 140 140" class="minister-donut" role="img" aria-label="Semáforo original: '+groups.map(g=>labels[g.key]+' '+g.n).join(', ')+'"><circle cx="70" cy="70" r="52" fill="none" stroke="#edf1f4" stroke-width="17"/>'+circles+'<text x="70" y="73" text-anchor="middle">'+rows.length+'</text><text class="minister-donut-sub" x="70" y="93" text-anchor="middle">temas</text></svg><div>'+groups.map(g=>'<button class="minister-legend-item" onclick="ministerSignal(\''+g.key+'\')"><span style="background:'+colors[g.key]+'" aria-hidden="true"></span>'+labels[g.key]+'<strong>'+g.n+'</strong></button>').join('')+'</div></div>';
+}
+function matrix(rows){
+ const defs=[['iu','Atención prioritaria','Importante · urgente'],['in','Programar seguimiento','Importante · menor urgencia'],['nu','Gestionar oportunamente','Menor importancia · urgente'],['nn','Monitorear','Menor importancia · menor urgencia']];
+ return '<div class="minister-matrix">'+defs.map(([key,title,sub])=>{const members=rows.filter(m=>m.quad===key);return '<section class="minister-quadrant" data-quadrant="'+key+'"><h4>'+title+' <span>'+members.length+'</span></h4><p>'+sub+'</p><div class="minister-quadrant-topics">'+(members.map(m=>topic(m)+badge(m)).join('')||'<small>Sin temas en este cuadrante.</small>')+'</div></section>';}).join('')+'</div><details class="minister-rules"><summary>Regla de puntaje y criterios de prioridad</summary><p>Importancia: D anunciado = 1 punto; E posible conflicto = 1 punto. Importante: al menos 1 punto.</p><p>Urgencia: F entrega 2026 = 1; fecha final o hito con año explícito vencido o dentro de 30 días = 2; W rojo = 2 o W ámbar = 1. Urgente: al menos 2 puntos. Se calcula a la fecha de consulta y no modifica W.</p><p>Es una regla de priorización, no una evaluación automática del cumplimiento. Los hitos con año supuesto no suman puntos de fecha.</p></details>';
+}
+function political(rows){
+ const groups=[['Anunciado y posible conflicto',m=>m.r.D==='1'&&m.r.E==='1'],['Solo anunciado',m=>m.r.D==='1'&&m.r.E!=='1'],['Solo posible conflicto',m=>m.r.D!=='1'&&m.r.E==='1'],['Sin ambas marcas',m=>m.r.D!=='1'&&m.r.E!=='1']];
+ return '<div class="minister-scroll"><table class="minister-risk"><caption>Marca política original por semáforo · número de temas</caption><thead><tr><th>Clasificación</th>'+['1','2','3','none'].map(k=>'<th>'+labels[k]+'</th>').join('')+'</tr></thead><tbody>'+groups.map(([label,test])=>'<tr><th scope="row">'+label+'</th>'+['1','2','3','none'].map(k=>{const n=rows.filter(m=>test(m)&&m.w===k).length;return '<td data-signal="'+k+'">'+n+'</td>';}).join('')+'</tr>').join('')+'</tbody></table></div>';
+}
+function alerts(rows){
+ const list=rows.map(m=>{const late=m.hs.filter(h=>h.date&&!h.inferred&&h.done!==true&&epoch(h.date)<epoch(today()));const delay=Number(m.r.V);const reasons=[...(m.w==='3'?['Semáforo rojo de la fuente']:[]),...late.map(h=>'Hito '+h.index+': fecha vencida sin confirmación de cumplimiento'),...(Number.isFinite(delay)&&delay>0?[delay+' días de retraso consignados en V']:[])];return {m,reasons,late};}).filter(x=>x.reasons.length).sort((a,b)=>(b.m.w==='3')-(a.m.w==='3')||b.late.length-a.late.length||Number(a.m.number)-Number(b.m.number)).slice(0,5);
+ return list.length?'<ol class="minister-alert-list">'+list.map(x=>'<li>'+topic(x.m)+'<p>'+esc(x.reasons.join(' · '))+'</p></li>').join('')+'</ol>':'<p class="minister-empty-note">Sin temas rojos ni fechas completas de hito vencidas en esta selección.</p>';
+}
+function quality(){
+ const models=allModels(),nums=models.map(m=>Number(m.number)).filter(Number.isFinite),missing=Array.from({length:Math.max(...nums,0)},(_,i)=>i+1).filter(n=>!nums.includes(n));
+ const cron=models.filter(m=>m.hs.some(h=>h.name)).length,unknown=models.filter(m=>m.w==='none').length,u=models.filter(m=>m.r.U!==undefined&&m.r.U!=='').length,v=models.filter(m=>m.r.V!==undefined&&m.r.V!=='').length;
+ return '<details class="minister-quality"><summary>Calidad y cobertura de la base · '+unknown+' sin semáforo</summary><ul><li>'+models.length+' temas; '+unknown+' sin W. No se rellenan ni se convierten en verde automáticamente.</li><li>'+cron+' temas con hitos descritos. Los textos sin año no se consideran fechas completas.</li><li>Numeración original: '+(missing.length?'faltan '+missing.join(', ')+'. Se conserva la numeración; no se crea ni se renumera un tema.':'sin saltos en la secuencia.')+'</li><li>U contiene '+u+' valores; V contiene '+v+'. U, V y W son métricas distintas y no se mezclan en un semáforo único.</li></ul></details>';
+}
+function summary(rows){return '<div class="minister-overview-grid">'+card('Importante vs. urgente',matrix(rows),'Cada tema aparece una vez. La ubicación es parcial cuando faltan fechas o W. Pulse un tema para consultar su ficha.')+card('Semáforo general',donut(rows),'W original: verde = buen avance; ámbar = avance medio; rojo = retraso; vacío = sin evaluar.')+card('Mapa de riesgo político',political(rows),'D y E son marcas originales. Potencial de conflicto no equivale a conflicto ocurrido.')+card('Alertas de seguimiento',alerts(rows),'Hasta 5 temas para revisar. W no tiene fecha de evaluación; no se presenta como un evento nuevo de esta semana.')+'</div>';}
+function grouping(rows,field){const map=new Map();rows.forEach(m=>split(m[field]).forEach(name=>{if(!map.has(name))map.set(name,[]);map.get(name).push(m);}));return [...map].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0]));}
+function unitView(rows){
+ const units=grouping(rows,'unit'),persons=grouping(rows,'person');const max=Math.max(1,...units.map(([,g])=>g.length));
+ return '<div class="minister-unit-grid">'+card('Temas y semáforo por unidad',units.map(([name,group])=>'<div class="minister-unit-row"><button onclick="ministerUnit('+esc(JSON.stringify(name))+')">'+esc(name)+'</button><div class="minister-unit-bar" aria-label="'+esc(name)+': '+group.length+' temas">'+signals(group).map(g=>'<span style="width:'+g.n/max*100+'%;background:'+colors[g.key]+'" title="'+labels[g.key]+': '+g.n+'"></span>').join('')+'</div><strong>'+group.length+'</strong><div class="minister-unit-values">'+signals(group).map(g=>labels[g.key]+': '+g.n).join(' · ')+'</div></div>').join(''),'Las unidades compartidas (J con /) cuentan el tema en cada unidad. Sus totales no son aditivos.')+card('Carga por persona',persons.length?'<div class="minister-scroll"><table><thead><tr><th>Persona consignada en K</th><th>Temas</th><th>Rojos</th><th>Sin evaluar</th></tr></thead><tbody>'+persons.map(([name,g])=>'<tr><th scope="row"><button class="minister-topic" onclick="ministerPerson('+esc(JSON.stringify(name))+')">'+esc(name)+'</button></th><td>'+g.length+'</td><td>'+g.filter(m=>m.w==='3').length+'</td><td>'+g.filter(m=>m.w==='none').length+'</td></tr>').join('')+'</tbody></table></div>':'<p>Sin personas para esta selección.</p>','Se separan los nombres consignados con /. Un tema compartido cuenta en cada persona; las cifras no son aditivas.')+'</div>';
+}
+function milestoneProgress(m){
+ const hs=m.hs.filter(h=>h.name),confirmed=hs.filter(h=>h.done===true).length,known=hs.filter(h=>h.done!==null).length;
+ if(m.d?.hitos&&known)return '<p><strong>'+confirmed+' / '+hs.length+'</strong> hitos definidos confirmados en la versión convalidada.</p><progress value="'+confirmed+'" max="'+Math.max(1,hs.length)+'" aria-label="Hitos confirmados"></progress>';
+ const u=m.r.U,ratio=Number(u);if(u!==undefined&&u!==''&&Number.isFinite(ratio)&&ratio>=0&&ratio<=1){const inferred=hs.length&&Number.isInteger(ratio*hs.length)?' · '+ratio*hs.length+' / '+hs.length+' como equivalencia de la proporción':'';return '<p><strong>'+Math.round(ratio*100)+' %</strong> según U original'+inferred+'.</p><progress value="'+ratio+'" max="1" aria-label="Proporción de hitos indicada en U"></progress><p class="minister-chart-note">La fuente no identifica cuáles hitos están cumplidos. No se asigna cumplimiento individual a partir de U.</p>';}
+ return '<p class="minister-empty-note">Sin proporción U ni confirmaciones convalidadas disponibles. No se muestra 0 % como si fuera una medición.</p>';
+}
+function timeline(m){
+ const hs=m.hs.filter(h=>h.name),dated=hs.filter(h=>h.date);const dates=[today(),m.end,...dated.map(h=>h.date)].filter(Boolean),year=2026,start=Math.min(Date.UTC(year,10,1),...dates.map(epoch)),end=Math.max(Date.UTC(year,11,31),...dates.map(epoch)),range=Math.max(DAY,end-start),pos=date=>Math.max(0,Math.min(100,(epoch(date)-start)/range*100));
+ const points=[...hs.map(h=>({...h,label:'Hito '+h.index})),...(m.end?[{label:'Fecha final (G)',date:m.end,name:'Entrega final',inferred:false}]:[])];
+ return '<label class="minister-year-option"><input type="checkbox" '+(assumeYear?'checked':'')+' onchange="ministerAssumeYear(this.checked)"> Ubicar hitos sin año suponiendo 2026 cuando F indica entrega en 2026</label><p class="minister-chart-note">Las fechas inferidas se marcan con * y no generan alertas ni puntaje por fecha. Se muestran fechas objetivo, no duraciones.</p>'+(points.length?'<div class="minister-timeline"><div class="minister-time-scale"><span>'+dateText(new Date(start).toISOString().slice(0,10))+'</span><strong>Hoy: '+dateText(today())+'</strong><span>'+dateText(new Date(end).toISOString().slice(0,10))+'</span></div>'+points.map(h=>'<div class="minister-time-row"><span><strong>'+h.label+'</strong><small>'+esc(h.name)+'</small></span><div class="minister-time-track"><span class="minister-today" style="left:'+pos(today())+'%" aria-label="Hoy"></span>'+(h.date?'<span class="minister-date-dot '+(h.inferred?'inferred':'')+'" style="left:'+pos(h.date)+'%" title="'+dateText(h.date)+(h.inferred?' · año supuesto':'')+'"></span>':'')+'</div><span>'+ (h.date?dateText(h.date)+(h.inferred?' *':''):'Sin fecha con año')+'</span></div>').join('')+'</div>':'<p class="minister-empty-note">No hay hitos descritos ni fecha final para este tema.</p>')+(hs.length?'<div class="minister-scroll"><table><thead><tr><th>Hito</th><th>Seguimiento disponible</th><th>Confirmación</th></tr></thead><tbody>'+hs.map(h=>'<tr><td>'+h.index+'. '+esc(h.name)+'</td><td>'+esc(h.status||'Sin seguimiento registrado')+'</td><td>'+(h.done===true?'Cumplido · convalidado':h.done===false?'No marcado como cumplido · convalidado':'Sin confirmación convalidada')+'</td></tr>').join('')+'</tbody></table></div>':'');
+}
+function detail(rows){
+ const m=rows.find(m=>Number(m.t.id)===chosen)||rows[0];if(!m)return '<p class="minister-empty-note">No hay temas para esta selección.</p>';chosen=Number(m.t.id);const latest=[...m.hs].reverse().find(h=>h.name);
+ return '<label class="minister-topic-select">Tema <select onchange="ministerChooseTopic(this.value)">'+rows.map(x=>'<option value="'+Number(x.t.id)+'" '+(x.t.id===m.t.id?'selected':'')+'>'+esc(x.number+' · '+x.tema)+'</option>').join('')+'</select></label><article class="minister-topic-card"><div class="minister-topic-heading"><div><small>TEMA '+esc(m.number)+' · '+(m.d?'CON VERSIÓN CONVALIDADA':'BASE ORIGINAL · SIN CONVALIDACIÓN')+'</small><h2>'+esc(m.tema)+'</h2><p>'+esc(m.producto)+'</p></div>'+badge(m)+'</div><dl class="minister-topic-meta"><div><dt>Unidad</dt><dd>'+esc(m.unit)+'</dd></div><div><dt>Responsable</dt><dd>'+esc(m.person)+'</dd></div><div><dt>Fecha final</dt><dd>'+dateText(m.end)+'</dd></div><div><dt>Avance convalidado</dt><dd>'+(m.d?Number(m.d.avance||0)+' %':'Sin versión convalidada')+'</dd></div></dl><div class="minister-topic-narrative"><section><h3>Situación</h3><p>'+esc(m.d?.texto||m.r.I||'Sin situación disponible')+'</p><small>'+(m.d?'Versión convalidada':'Estado original de la base')+'</small></section><section><h3>Observación original</h3><p>'+esc(m.r.T||'Sin observación en T')+'</p></section><section><h3>Último hito definido</h3><p>'+esc(latest?latest.name:'Sin hitos definidos')+'</p></section></div></article><div class="minister-detail-grid">'+card('Avance por hitos',milestoneProgress(m))+card('Marcas de prioridad','<p>Anunciado: <strong>'+flag(m.r.D)+'</strong> · Posible conflicto: <strong>'+flag(m.r.E)+'</strong> · Entrega 2026: <strong>'+flag(m.r.F)+'</strong></p><p>Importancia: '+m.importance+' puntos · Urgencia: '+m.urgency+' puntos.</p>')+'</div>'+card('Línea de tiempo de hitos · cobertura parcial',timeline(m))+card('Orientación del Señor Ministro','<label for="ministerOrientation">Orientación para el seguimiento</label><textarea id="ministerOrientation"></textarea><p><button onclick="ministerSaveOrientation('+Number(m.t.id)+')">Registrar orientación</button></p><div>'+m.t.historial.filter(h=>String(h.actor||'').endsWith(' · ministro')).map(h=>'<p><small>'+esc(h.fecha)+' · Señor Ministro</small><br>'+esc(h.texto)+'</p>').join('')+'</div>');
+}
+function tabs(){return '<div class="minister-tabs" role="tablist" aria-label="Vistas del tablero">'+[['summary','Resumen'],['units','Por unidad'],['detail','Detalle por tema']].map(([key,label])=>'<button role="tab" id="minister-tab-'+key+'" aria-controls="minister-panel" aria-selected="'+(view===key)+'" onclick="ministerView(\''+key+'\')" onkeydown="ministerTabKey(event,\''+key+'\')">'+label+'</button>').join('')+'</div>';}
+function chips(){return '<div class="minister-selection">'+[unitFocus?'Unidad: '+esc(unitFocus):'',personFocus?'Persona: '+esc(personFocus):'',signalFocus?'Semáforo: '+labels[signalFocus]:''].filter(Boolean).join(' · ')+(unitFocus||personFocus||signalFocus?' <button class="secondary" onclick="ministerClearFocus()">Quitar selección del gráfico</button>':'')+'</div>';}
+window.ministerView=value=>{if(!['summary','units','detail'].includes(value)||role!=='ministro')return;view=value;render();};
+window.ministerTabKey=(event,key)=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const keys=['summary','units','detail'],i=keys.indexOf(key),next=event.key==='Home'?0:event.key==='End'?2:(i+(event.key==='ArrowRight'?1:2))%3;window.ministerView(keys[next]);$('minister-tab-'+keys[next])?.focus();};
+window.ministerTopic=id=>{if(role!=='ministro')return;chosen=Number(id);view='detail';render();};
+window.ministerChooseTopic=id=>{chosen=Number(id);render();};
+window.ministerAssumeYear=value=>{assumeYear=!!value;render();};
+window.ministerUnit=name=>{unitFocus=name;personFocus='';$('unit').value='';render();};
+window.ministerPerson=name=>{personFocus=name;unitFocus='';$('person').value='';render();};
+window.ministerSignal=value=>{signalFocus=signalFocus===value?'':value;$('alertFilter').value='';render();};
+window.ministerClearFocus=()=>{unitFocus='';personFocus='';signalFocus='';render();};
+window.resetFilters=function(){if(role==='ministro'){unitFocus='';personFocus='';signalFocus='';}originalReset();};
+window.ministerSaveOrientation=function(id){if(role!=='ministro'||!requireActor())return;const text=$('ministerOrientation').value.trim(),t=data.find(t=>Number(t.id)===Number(id));if(!text||!t)return;log(t,text);save();render();};
 window.render=function(){
- originalRender();if(role!=='ministro')return;
- $('who').textContent='Señor Ministro';$('title').textContent='Resumen ejecutivo de compromisos';
- $('intro').textContent='Señor Ministro: consulte los avances convalidados por el comité y registre orientaciones para su seguimiento.';
- $('actorName').value='Señor Ministro';
- const html='<section class="executive-focus"><h2>Explorar los avances convalidados</h2><p>Las infografías, los gráficos y la tabla responden a los mismos filtros.</p><div class="executive-focus-buttons">'+options.map(([key,label])=>'<button type="button" class="secondary" aria-pressed="'+(focus===key)+'" onclick="ministerFocus(\''+key+'\')">'+label+'</button>').join('')+'</div></section>'+infographics(currentRows);
- $('analytics').innerHTML=html+$('analytics').innerHTML;
+ if(role!=='ministro'){if(scopeNote)scopeNote.textContent=originalScopeNote;return originalRender();}
+ if(scopeNote)scopeNote.textContent='La base original y los avances convalidados se identifican por separado. Los indicadores y las tres vistas usan la selección actual. Los cambios se guardan en este navegador.';
+ const rows=selection();currentRows=rows.map(m=>m.t);
+ $('who').textContent='Señor Ministro';$('title').textContent='Tablero de seguimiento estratégico';$('intro').textContent='Señor Ministro: consulte prioridades, unidades y fichas de los '+data.length+' temas de la base. Los avances de gestión se muestran solo cuando están convalidados.';$('actorName').value='Señor Ministro';
+ $('stats').innerHTML=[['Temas seleccionados',rows.length],['Sin semáforo',rows.filter(m=>m.w==='none').length],['Anunciados y posible conflicto',rows.filter(m=>m.r.D==='1'&&m.r.E==='1').length],['Con versión convalidada',rows.filter(m=>m.d).length]].map(([label,n])=>'<div class="panel"><small>'+label+'</small><div class="metric">'+n+'</div></div>').join('');
+ $('analytics').innerHTML=tabs()+chips()+'<div id="minister-panel" role="tabpanel" aria-labelledby="minister-tab-'+view+'">'+(view==='summary'?summary(rows):view==='units'?unitView(rows):detail(rows))+'</div>'+quality();
+ $('list').innerHTML='';
+};
+window.printReport=function(){
+ if(role!=='ministro')return originalPrint();const rows=selection(),selected=rows.find(m=>Number(m.t.id)===chosen);const list=view==='detail'&&selected?[selected]:rows;
+ $('report').innerHTML='<header><h1>Señor Ministro · Seguimiento estratégico</h1><p>Consulta: '+dateText(today())+' · '+list.length+' temas de la selección</p></header>'+list.map(m=>'<article><h2>'+esc(m.number+' · '+m.tema)+'</h2><p>'+esc(m.producto)+'</p><p>'+esc(m.unit)+' · '+esc(m.person)+' · Semáforo original: '+labels[m.w]+'</p><p>Fecha final: '+dateText(m.end)+' · '+(m.d?'Avance convalidado: '+Number(m.d.avance||0)+' %':'Sin versión convalidada')+'</p><p>'+esc(m.d?.texto||m.r.I||'Sin situación disponible')+'</p><p>Observación original: '+esc(m.r.T||'Sin observación')+'</p><h3>Hitos</h3>'+milestoneProgress(m)+m.hs.filter(h=>h.name).map(h=>'<p>'+h.index+'. '+esc(h.name)+' · '+esc(h.status||'Sin seguimiento')+' · '+(h.date?dateText(h.date)+(h.inferred?' (año supuesto)':''):'Sin fecha con año')+'</p>').join('')+'</article>').join('')+'<p>W conserva la clasificación de la fuente. U y el avance global son métricas distintas. No se incluyen borradores de gestión.</p>';window.print();
 };
 })();
