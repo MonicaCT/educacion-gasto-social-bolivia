@@ -35,3 +35,11 @@ Use Abrir diagrama en tamaño completo para leer o descargar la imagen con más 
 Los cambios se guardan en este navegador. Los perfiles comparten los registros únicamente en este mismo navegador: no hay sincronización entre computadoras ni navegadores diferentes. El panel de conexión, los campos de token y las opciones de sincronización fueron retirados.
 
 Los registros e historiales existentes se mantienen. La aplicación sigue permitiendo guardar borradores, enviar temas al comité, convalidar avances y registrar orientaciones dentro del almacenamiento local.
+
+## Informe para el señor Ministro
+
+La vista del ministro se dirige formalmente a Ricardo Erick Sanjinés Chávez, Ministro de Educación, con el tratamiento Señor Ministro. Su nombre y cargo se contrastaron con la [publicación oficial de posesión](https://www.minedu.gob.bo/index.php?Itemid=854&catid=182&id=8379&option=com_content&view=article). La fecha del encabezado es la fecha de consulta, no una fecha de actualización de los datos.
+
+El informe utiliza una paleta de grises, blanco y un acento discreto. Resume tres indicadores globales: temas en seguimiento, temas con versión convalidada y avance global convalidado. Este último mantiene como denominador todos los temas, incluidos aquellos sin convalidación, que aportan 0 %.
+
+La selección muestra una distribución por intervalos de avance y una tabla resumida con responsable, fecha comprometida, avance y situación convalidados. Ver ficha permite consultar el detalle y registrar orientaciones. Imprimir genera el informe personalizado con los datos de la selección y sus versiones convalidadas. Los otros perfiles conservan sus vistas de trabajo.
