@@ -1,41 +1,33 @@
-# Seguimiento MINEDU · Documentos privados del comité
+# Seguimiento MINEDU
 
-## Responsables: enviar sin cuenta de GitHub
+La herramienta permite registrar avances, revisar compromisos y consultar la versión convalidada para el ministro.
 
-1. Ingrese al perfil Responsable con su nombre y abra **Adjuntos relevantes**.
-2. Pegue su código personal y pulse **Conectar envío**.
-3. Seleccione el compromiso y los archivos (máximo 10 MB por archivo).
-4. Pulse **Enviar documentos al comité** y espere la confirmación.
+## Lectura de tablas
 
-Cada documento se cifra antes de salir del navegador y se guarda automáticamente en el repositorio privado `MonicaCT/minedu-documentos-privados`. No hace falta una cuenta de GitHub ni un token. El código de responsable solo permite enviar: el servidor rechaza listados, consultas y descargas.
+Las filas alternan fondos para facilitar el seguimiento horizontal. Los encabezados diferencian las columnas de identificación, revisión y avance. Cada etapa tiene color, icono y texto: Borrador, En revisión, Observado y Validado. Las tablas de hitos tienen encabezados violeta y los reportes impresos, encabezados ocre.
 
-Si una carga múltiple se interrumpe, el mensaje indica cuántos archivos se confirmaron. Seleccione nuevamente solo los restantes.
+Los colores no reemplazan las etiquetas. El botón de etapa abre su historial; Situación reportada abre la ficha; Observaciones muestra solicitudes y plazos.
 
-## Comité: consultar
+## Gráficos
 
-1. Ingrese al perfil **Comité de seguimiento** y abra **Adjuntos relevantes**.
-2. Seleccione su archivo privado de acceso y pulse **Abrir acceso del comité**.
-3. Pulse **Descargar documento**. El archivo se descifra en el navegador.
-4. Pulse **Cerrar acceso** al terminar. Recargar o cerrar la página también elimina el acceso de la sesión.
+Los gráficos y la tabla usan los mismos filtros y el mismo conjunto de temas. Muestran la cantidad de temas por etapa y por intervalo de avance. Sin reporte identifica los temas sin descripción de situación actual y sin un avance mayor que cero; no significa automáticamente retraso.
 
-Entrar al perfil con la contraseña del prototipo NO concede acceso a los documentos: también hace falta el archivo privado del comité. Ni los responsables ni el perfil Ministro pueden consultar los adjuntos. El remitente conserva, naturalmente, su archivo original.
+El comité dispone además de un gráfico con las alertas originales de la fuente. Si hay avances reportados y más de una unidad seleccionada, se muestra el avance promedio por unidad, con una escala común de 0 a 100 % y el mismo peso por tema. Los temas sin avance reportado aportan 0 %.
 
-## Administración
+El perfil Ministro utiliza los avances de la última versión convalidada. Una etapa actual En revisión puede coexistir con una versión convalidada anterior.
 
-La administradora recibe cinco códigos separados, uno por responsable, y un archivo privado para el comité. Entregue a cada responsable únicamente su propio código. Comparta el archivo privado exclusivamente con integrantes del comité y conserve un respaldo seguro. Quien obtenga ese archivo podrá leer los documentos. Si pierde la llave privada y no hay respaldo, no es posible recuperar el contenido cifrado.
+Los indicadores superiores resumen todos los temas; los gráficos y la tabla describen la selección filtrada. Cuando no hay temas, se muestra un mensaje explícito.
 
-Los códigos y la llave privada no se publican en GitHub. Los códigos del servicio y la credencial de escritura de GitHub se configuran como variables secretas de Sites. El navegador conserva sus accesos solo en memoria, sin localStorage ni IndexedDB.
+## Trabajo por perfil
 
-El punto de recepción es accesible por internet para funcionar desde GitHub Pages sin cuentas de los participantes. Todas las operaciones de documentos exigen un código válido. Los códigos de envío no permiten leer y el código del comité no permite subir. El repositorio privado guarda cifrados el contenido y los metadatos (nombre, autor y compromiso). Solo la llave pública de envío se publica en el dashboard.
+- Responsable: identifíquese, localice el compromiso y abra Situación reportada. Actualice avance, situación, riesgos, próximo paso y seguimiento de hitos. Guarde el borrador o envíelo al comité.
+- Comité: revise las fichas, asuma revisiones, comunique observaciones y plazos, y convalide los avances para el ministro.
+- Ministro: consulte los avances convalidados y registre orientaciones.
 
-Se utiliza AES-256-GCM con una clave nueva por documento y RSA-OAEP de 3072 bits para entregar esa clave al comité. La integridad vincula el identificador del documento y distingue archivo y metadatos. El sobre cifrado y el contenido se guardan juntos en un commit. No hay enlaces públicos de descarga.
+## Guardado
 
-Para revocar un código, elimínelo o sustitúyalo en la variable secreta `DOCUMENT_ACCESS_CODES` del servicio y publique la nueva revisión. El comité comparte un acceso de grupo: para revocar a alguien que ya recibió su llave hay que rotar la llave y el acceso del comité. No se pueden retirar las copias descargadas previamente.
+Los cambios se conservan en el navegador. La administración puede sincronizarlos con el repositorio público desde Administración · sincronizar avances con GitHub, mediante un token personal limitado a este repositorio con permiso Contents: lectura y escritura. El token permanece únicamente en memoria durante la sesión.
 
-## Avances y documentos
+Guardar avances en GitHub confirma un commit. Si otra persona modificó el estado compartido, el guardado se rechaza para evitar sobrescribirla. Exporte un respaldo antes de cargar otra versión si necesita conservar cambios locales.
 
-Los avances y observaciones de las fichas conservan el funcionamiento anterior: se guardan localmente y la administradora puede sincronizarlos al repositorio público con **Administración · sincronizar avances con GitHub**. Esa opción no es necesaria para enviar documentos.
-
-No escriba información confidencial ni enlaces públicos a documentos en las fichas. Esta protección se aplica a los documentos enviados mediante **Adjuntos relevantes**. Los archivos guardados anteriormente en un navegador permanecen en ese equipo y deben seleccionarse de nuevo para enviarlos al almacenamiento privado.
-
-La comprobación inicial no encontró documentos en la carpeta pública de adjuntos del repositorio.
+La carga de archivos y el servicio de recepción fueron retirados. Los datos de seguimiento e historiales existentes se mantienen.
